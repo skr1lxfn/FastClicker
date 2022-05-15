@@ -38,7 +38,7 @@ time_text = Label(0, 0, 50, 50, back)
 time_text.set_text('Время:', 40, (0, 0, 76))
 time_text.draw(20, 20)
 
-timer = Label(50, 55, 50, 40, back)
+timer = Label(50, 65, 50, 40, back)
 timer.set_text('0', 40, (0, 0, 76))
 timer.draw(0,0) 
 
@@ -47,11 +47,11 @@ cur_score = start_time
 
 score_text = Label(380, 0, 50, 50, back)
 score_text.set_text('Счёт:', 40, (0, 0, 76))
-score_text.draw(20, 20)
+score_text.draw(180, 20)
 
-score = Label(430, 55, 50, 40, back)
+score = Label(420, 65, 50, 40, back)
 score.set_text('0', 40, (0, 0, 76))
-score.draw(0,0)
+score.draw(180,0)
 
 for i in range(num_cards):
     new_card = Label(x, 170, 90, 120, (225, 255, 0))
@@ -68,7 +68,6 @@ yellow = (255, 255, 0)
 game = True
 
 while game:
-   
     if wait == 0:
         wait = 20
         click = randint(1, num_cards)
@@ -95,8 +94,9 @@ while game:
                         cards[i].color((255, 0 ,0))
                         points -=1
                     cards[i].fill()
-                    score.set_text(str(points), 40, (0, 0, 85))
-                    score.draw(0,0)
+    score.set_text(str(points), 40, (0, 0, 85))
+    score.draw(180,0)
+    
 
 
     new_time = time.time()
